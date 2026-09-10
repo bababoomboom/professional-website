@@ -85,16 +85,17 @@ a.more {
   font-size: 80px;
   opacity: 0.08;
   z-index: 0;
+  pointer-events: none;
 }
 
 .leaf-accent-tl::before {
-  top: -20px;
-  left: -20px;
+  top: 20px;
+  left: 20px;
 }
 
 .leaf-accent-br::after {
-  bottom: -20px;
-  right: -20px;
+  bottom: 20px;
+  right: 20px;
 }
 
 /* =========================================
@@ -159,7 +160,7 @@ a.more {
 }
 
 /* =========================================
-   HERO SECTION - ANIMATED GRADIENT
+   HERO SECTION - ANIMATED GRADIENT (FEATURE #1)
 ========================================= */
 .hero {
   background: linear-gradient(135deg, var(--color-primary-green) 0%, var(--color-medium-green) 50%, var(--color-primary-green) 100%);
@@ -191,18 +192,6 @@ a.more {
 .hero .intro-excerpt {
   position: relative;
   z-index: 4;
-}
-
-@media (min-width: 992px) {
-  .hero .intro-excerpt {
-    max-width: 450px;
-  }
-}
-
-.hero h1 {
-  font-weight: 700;
-  color: var(--color-white);
-  margin-bottom: 30px;
   animation: fadeInUp 2.5s ease;
 }
 
@@ -215,6 +204,18 @@ a.more {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@media (min-width: 992px) {
+  .hero .intro-excerpt {
+    max-width: 450px;
+  }
+}
+
+.hero h1 {
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 30px;
 }
 
 @media (min-width: 1400px) {
@@ -232,6 +233,7 @@ a.more {
   position: relative;
 }
 
+/* FEATURE #3: FLOATING ANIMATED IMAGES & ICONS */
 .hero .hero-img-wrap img {
   position: relative;
   top: 0px;
@@ -271,6 +273,30 @@ a.more {
   }
 }
 
+/* Floating Icons Animation */
+.floating-icon {
+  position: absolute;
+  animation: float 3.5s ease-in-out infinite;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+}
+
+.icon-1 {
+  animation-delay: 0s;
+}
+
+.icon-2 {
+  animation-delay: 0.8s;
+}
+
+.icon-3 {
+  animation-delay: 1.6s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
 .hero .hero-img-wrap:after {
   content: "";
   position: absolute;
@@ -290,9 +316,6 @@ a.more {
   }
 }
 
-/* =========================================
-   BUTTONS - GLOWING CTA EFFECT
-========================================= */
 .btn {
   font-weight: 600;
   padding: 12px 30px;
@@ -370,15 +393,12 @@ a.more {
   color: var(--color-white);
 }
 
-/* =========================================
-   SECTION TITLES
-========================================= */
 .section-title {
   color: var(--color-dark-text);
 }
 
 /* =========================================
-   PRODUCT SECTION - ENHANCED CARDS
+   PRODUCT SECTION - ENHANCED CARDS (FEATURE #2)
 ========================================= */
 .product-section {
   padding: 7rem 0;
@@ -390,13 +410,32 @@ a.more {
   text-decoration: none;
   display: block;
   position: relative;
-  padding-bottom: 50px;
+  padding: 25px;
   cursor: pointer;
   background: var(--color-white);
   border-radius: 20px;
-  padding: 25px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: var(--transition-hover);
+  height: 100%;
+  overflow: hidden;
+}
+
+.product-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent, rgba(152, 216, 200, 0.1));
+  opacity: 0;
+  transition: opacity 2.5s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.product-item:hover::before {
+  opacity: 1;
 }
 
 .product-item:hover {
@@ -410,6 +449,7 @@ a.more {
   position: relative;
   top: 0;
   transition: var(--transition-hover);
+  z-index: 1;
 }
 
 .product-item:hover .product-thumbnail {
@@ -422,12 +462,16 @@ a.more {
   font-size: 16px;
   color: var(--color-dark-text);
   text-decoration: none;
+  z-index: 1;
+  position: relative;
 }
 
 .product-item strong {
   font-weight: 800 !important;
   font-size: 18px !important;
   color: var(--color-medium-green);
+  z-index: 1;
+  position: relative;
 }
 
 .product-item .icon-cross {
@@ -439,12 +483,13 @@ a.more {
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: -17.5px;
+  margin-bottom: -25px;
   border-radius: 50%;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-hover);
   box-shadow: 0 5px 20px rgba(59, 93, 80, 0.3);
+  z-index: 2;
 }
 
 .product-item .icon-cross img {
@@ -489,9 +534,6 @@ a.more {
   height: 70%;
 }
 
-/* =========================================
-   WHY CHOOSE US SECTION
-========================================= */
 .why-choose-section {
   padding: 7rem 0;
   position: relative;
@@ -518,7 +560,7 @@ a.more {
 }
 
 /* =========================================
-   FEATURE SECTION - COLORED BADGES
+   FEATURE SECTION - COLORED BADGES (FEATURE #4)
 ========================================= */
 .feature {
   margin-bottom: 30px;
@@ -535,11 +577,12 @@ a.more {
   width: 60px;
   height: 60px;
   position: absolute;
-  background: linear-gradient(135deg, rgba(59, 93, 80, 0.15), rgba(46, 139, 87, 0.1));
+  background: var(--badge-color, rgba(59, 93, 80, 0.15));
   border-radius: 50%;
   right: -8px;
   bottom: 0;
   animation: pulse 3s ease-in-out infinite;
+  z-index: -1;
 }
 
 @keyframes pulse {
@@ -565,11 +608,9 @@ a.more {
   color: var(--color-light-text);
 }
 
-/* =========================================
-   WE HELP SECTION
-========================================= */
 .we-help-section {
   padding: 7rem 0;
+  position: relative;
 }
 
 .we-help-section .imgs-grid {
@@ -617,25 +658,14 @@ a.more {
 }
 
 /* =========================================
-   TIMELINE - HOW DO WE WORK (Future)
+   TIMELINE - HOW DO WE WORK (FEATURE #5)
 ========================================= */
 .timeline {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 40px 0;
+  margin: 15px 0;
   position: relative;
-}
-
-.timeline::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-pale-teal) 0%, var(--color-light-teal) 50%, var(--color-pale-teal) 100%);
-  z-index: 0;
 }
 
 .timeline-item {
@@ -643,6 +673,7 @@ a.more {
   position: relative;
   z-index: 2;
   flex: 1;
+  padding: 0 10px;
 }
 
 .timeline-item::before {
@@ -656,10 +687,10 @@ a.more {
   top: -25px;
   transform: translateX(-50%);
   box-shadow: 0 4px 15px rgba(59, 93, 80, 0.3);
-  animation: slideIn 2.5s ease backwards;
+  animation: slideInTimeline 2.5s ease backwards;
 }
 
-@keyframes slideIn {
+@keyframes slideInTimeline {
   from {
     transform: translateX(-50%) scale(0.5);
     opacity: 0;
@@ -673,46 +704,54 @@ a.more {
 .timeline-item h4 {
   color: var(--color-dark-text);
   font-weight: 600;
-  margin-top: 60px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  font-size: 14px;
 }
 
 .timeline-item p {
   color: var(--color-light-text);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.6;
 }
 
+.custom-list {
+  width: 100%;
+}
+
+.custom-list li {
+  display: inline-block;
+  width: calc(50% - 20px);
+  margin-bottom: 12px;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 20px;
+}
+
+.custom-list li:before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary-green);
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
 /* =========================================
-   STATS SECTION - COUNTING ANIMATION
+   STATS SECTION - COUNTING ANIMATION (FEATURE #6)
 ========================================= */
-.stat-number {
+.popular-product {
+  padding: 0 0 7rem 0;
+}
+
+.stat-counter {
   font-size: 32px;
   font-weight: 700;
   color: var(--color-medium-green);
   font-family: "Inter", sans-serif;
-}
-
-.stat-counter {
-  animation: countUp 2.5s ease forwards;
-}
-
-@keyframes countUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =========================================
-   POPULAR PRODUCT / STATS
-========================================= */
-.popular-product {
-  padding: 0 0 7rem 0;
+  display: inline-block;
 }
 
 .popular-product .product-item-sm h3 {
@@ -756,9 +795,6 @@ a.more {
   z-index: -1;
 }
 
-/* =========================================
-   TESTIMONIALS
-========================================= */
 .testimonial-section {
   padding: 3rem 0 7rem 0;
 }
@@ -882,16 +918,10 @@ a.more {
   background-color: var(--color-primary-green);
 }
 
-/* =========================================
-   BEFORE FOOTER SECTION
-========================================= */
 .before-footer-section {
   padding: 7rem 0 12rem 0 !important;
 }
 
-/* =========================================
-   BLOG SECTION
-========================================= */
 .blog-section {
   padding: 7rem 0 12rem 0;
 }
@@ -935,9 +965,6 @@ a.more {
   transform: scale(1.05);
 }
 
-/* =========================================
-   FOOTER SECTION
-========================================= */
 .footer-section {
   padding: 80px 0;
   background: var(--color-white);
@@ -1072,9 +1099,6 @@ a.more {
   font-size: 14px !important;
 }
 
-/* =========================================
-   GENERIC STYLES
-========================================= */
 .untree_co-section {
   padding: 7rem 0;
 }
@@ -1123,9 +1147,6 @@ textarea {
   height: auto !important;
 }
 
-/* =========================================
-   SITE BLOCKS TABLE
-========================================= */
 .site-blocks-table {
   overflow: auto;
 }
@@ -1196,9 +1217,6 @@ textarea {
   background: rgba(59, 93, 80, 0.2);
 }
 
-/* =========================================
-   PRODUCT ITEM SMALL
-========================================= */
 .product-item-sm .thumbnail {
   width: 90px;
   height: 90px;
@@ -1215,9 +1233,6 @@ textarea {
   object-fit: contain;
 }
 
-/* =========================================
-   SIDEBAR - FOR DASHBOARD
-========================================= */
 .sidebar {
   position: fixed;
   top: 0;
