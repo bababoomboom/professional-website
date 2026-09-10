@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Approvals</title>
+    <link rel="icon" href="images/logo.png">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Main CSS -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/dashboard.css" rel="stylesheet">
+
+    <!-- Cursive Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Hamburger Button -->
+    <button id="menu-toggle" class="hamburger-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <img src="images/logo.png" alt="WithLove Logo">
+            <h4>WithLove</h4>
+        </div>
+
+        <ul class="sidebar-nav">
+            <li>
+                <a href="home.html">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="items.html">
+                    <i class="fas fa-box-open"></i>
+                    Items
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="requests.html">
+                    <i class="fas fa-file-alt"></i>
+                    Requests
+                </a>
+            </li>
+
+            <li>
+                <a href="approvals.html">
+                    <i class="fas fa-check-circle"></i>
+                    Approvals
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    <i class="fas fa-user"></i>
+                    Profile
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+<div class="container approvals-container">
+
+    <!-- ITEM 1 -->
+    <div class="approval-card">
+
+    <!-- Top Section -->
+    <div class="item-card">
+
+        <img src="images/textbook.png" class="item-image">
+
+        <div class="item-info">
+            <h3>Textbook Maths Year 12</h3>
+            <p>Anna Lee</p>
+            <p>Category: Textbook</p>
+            <p>Requests made: 4</p>
+        </div>
+
+        <button class="more-info-btn">
+            See More
+        </button>
+
+    </div>
+
+    <!-- Hidden Requests Section -->
+    <div class="request-table">
+
+        <div class="request-header">
+            <span>Name</span>
+            <span>Email</span>
+            <span>School</span>
+            <span>Class</span>
+            <span>Action</span>
+        </div>
+
+        <div class="request-row">
+            <span>John Smith</span>
+            <span>john@email.com</span>
+            <span>GCC</span>
+            <span>12A</span>
+            <button class="accept-btn">Accept</button>
+        </div>
+
+        <div class="request-row">
+            <span>Sarah Lee</span>
+            <span>sarah@email.com</span>
+            <span>GCK</span>
+            <span>12B</span>
+            <button class="accept-btn">Accept</button>
+        </div>
+
+        <div class="request-row">
+            <span>Manon Charlie</span>
+            <span>charlie@email.com</span>
+            <span>GCN</span>
+            <span>12S</span>
+            <button class="accept-btn">Accept</button>
+        </div>
+
+        <div class="request-row">
+            <span>Amanda Helen</span>
+            <span>amanda@email.com</span>
+            <span>GCC</span>
+            <span>12D</span>
+            <button class="accept-btn">Accept</button>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer-section">
+
+    <div class="container">
+
+        <div class="text-center border-top pt-4">
+
+            <p>
+                WithLove © 2025. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/custom.js"></script>
+
+</body>
+</html>
