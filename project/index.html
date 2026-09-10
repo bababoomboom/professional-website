@@ -26,7 +26,7 @@
       </button>
   </nav>	<!-- End Header/Navigation -->
 
-		<!-- Start Hero Section -->
+		<!-- Start Hero Section - FEATURE #1: ANIMATED GRADIENT -->
 <div class="hero">
     <div class="container">
       <div class="row justify-content-between">
@@ -41,7 +41,12 @@
         </div>
         <div class="col-lg-7">
           <div class="hero-img-wrap">
-            <img src="images/couch.png" class="img-fluid">
+            <!-- FEATURE #3: FLOATING ANIMATED IMAGE -->
+            <img src="images/couch.png" class="img-fluid floating-image">
+            <!-- Floating Icon Decorations -->
+            <div class="floating-icon icon-1" style="font-size: 40px; top: 10%; left: 15%;">📚</div>
+            <div class="floating-icon icon-2" style="font-size: 35px; top: 30%; right: 10%;">❤️</div>
+            <div class="floating-icon icon-3" style="font-size: 38px; bottom: 20%; left: 5%;">🤝</div>
           </div>
         </div>
       </div>
@@ -50,7 +55,7 @@
 		<!-- End Hero Section -->
 
 <!-- Start Why Choose Us Section -->
-<div class="why-choose-section">
+<div class="why-choose-section bg-pattern leaf-accent-tl">
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-lg-6">
@@ -68,10 +73,11 @@
           What if there was a more modern, connected and efficient way to ask around to donate?
         </p>
 
+        <!-- FEATURE #4: COLORED BADGE BACKGROUNDS ON FEATURES -->
         <div class="row my-5">
           <div class="col-6 col-md-6">
             <div class="feature">
-              <div class="icon">
+              <div class="icon" style="--badge-color: rgba(152, 216, 200, 0.3);">
                 <img src="images/truck.svg" alt="Fast & Free" class="img-fluid">
               </div>
               <h3>Fast Delivery</h3>
@@ -81,7 +87,7 @@
 
           <div class="col-6 col-md-6">
             <div class="feature">
-              <div class="icon">
+              <div class="icon" style="--badge-color: rgba(62, 180, 137, 0.2);">
                 <img src="images/bag.svg" alt="Easy Shopping" class="img-fluid">
               </div>
               <h3>Easy Sharing</h3>
@@ -91,7 +97,7 @@
 
           <div class="col-6 col-md-6">
             <div class="feature">
-              <div class="icon">
+              <div class="icon" style="--badge-color: rgba(46, 139, 87, 0.25);">
                 <img src="images/support.svg" alt="Support" class="img-fluid">
               </div>
               <h3>24/7 Support</h3>
@@ -101,7 +107,7 @@
 
           <div class="col-6 col-md-6">
             <div class="feature">
-              <div class="icon">
+              <div class="icon" style="--badge-color: rgba(59, 93, 80, 0.2);">
                 <img src="images/return.svg" alt="Returns" class="img-fluid">
               </div>
               <h3>Free Returns</h3>
@@ -122,7 +128,7 @@
 <!-- End Why Choose Us Section -->
 
 <!-- Start We Help Section -->
-<div class="we-help-section">
+<div class="we-help-section leaf-accent-br">
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-lg-7 mb-5 mb-lg-0">
@@ -150,22 +156,45 @@
         </p>
 
         <!-- KEEP EXACTLY AS IS -->
-        <p><a href="#" class="btn">Explore</a></p>
+        <p><a href="#" class="btn btn-primary">Explore</a></p>
       </div>
     </div>
   </div>
 </div>
 <!-- End We Help Section -->
 
-<!-- Start Product Section -->
+<!-- Start Product Section - FEATURE #2: ENHANCED CARD HOVER EFFECTS -->
 <div class="product-section">
   <div class="container">
     <div class="row">
 
-      <!-- Start Column 1 -->
+      <!-- Start Column 1 - FEATURE #5: TIMELINE -->
       <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
         <h2 class="mb-4 section-title">HOW DO WE WORK?</h2>
-        <p class="mb-4 lead">Step 1: Create your account<br>Step 2: List or find your items<br>Step 3: Connect and arrange<br>Step 4: Complete the swap</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Step 1</h4>
+            <p>Create your account</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Step 2</h4>
+            <p>List or find items</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Step 3</h4>
+            <p>Connect & arrange</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Step 4</h4>
+            <p>Complete the swap</p>
+          </div>
+        </div>
       </div> 
       <!-- End Column 1 -->
 
@@ -213,7 +242,7 @@
 </div>
 <!-- End Product Section -->
 
-<!-- Start Popular Product -->
+<!-- Start Popular Product - FEATURE #6: STAT COUNTER ANIMATIONS -->
 <div class="popular-product">
   <div class="container">
     <div class="row">
@@ -224,7 +253,7 @@
             <img src="images/user.svg" alt="Community Support" class="img-fluid">
           </div>
           <div class="pt-3">
-            <h3 class="h5 mb-3">91.2% support the idea</h3>
+            <h3 class="h5 mb-3"><span class="stat-counter">91</span>.2% support the idea</h3>
             <p class="lead text-success fw-bold mb-1">of giving usable items to others in school for free instead of throwing them away.</p>
           </div>
         </div>
@@ -236,7 +265,7 @@
             <img src="images/user.svg" alt="Platform Utility" class="img-fluid">
           </div>
           <div class="pt-3">
-            <h3 class="h5 mb-3">94.2% agrees</h3>
+            <h3 class="h5 mb-3"><span class="stat-counter">94</span>.2% agrees</h3>
             <p class="lead text-success fw-bold mb-1">WithLove is useful for the school community</p>
           </div>
         </div>
@@ -248,7 +277,7 @@
             <img src="images/user.svg" alt="Student Support" class="img-fluid">
           </div>
           <div class="pt-3">
-            <h3 class="h5 mb-3">91.2% says</h3>
+            <h3 class="h5 mb-3"><span class="stat-counter">91</span>.2% says</h3>
             <p class="lead text-success fw-bold mb-1">WithLove would help students who find it hard to afford some materials.</p>
           </div>
         </div>
@@ -264,6 +293,31 @@
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>
+		
+		<!-- FEATURE #6: Stat Counter Animation Script -->
+		<script>
+		  // Animate stat counters when they come into view
+		  const counters = document.querySelectorAll('.stat-counter');
+		  const animateCounters = () => {
+		    counters.forEach(counter => {
+		      const target = parseInt(counter.textContent);
+		      let count = 0;
+		      const increment = target / 50;
+		      const timer = setInterval(() => {
+		        count += increment;
+		        if (count >= target) {
+		          counter.textContent = target;
+		          clearInterval(timer);
+		        } else {
+		          counter.textContent = Math.floor(count);
+		        }
+		      }, 30);
+		    });
+		  };
+		  
+		  // Trigger animation on page load
+		  window.addEventListener('load', animateCounters);
+		</script>
 	</body>
 
 </html>
